@@ -58,7 +58,11 @@
           </div>
         </div>
         <div class="search__content">
-          <input v-model="searchRow" class="textInput">
+          <input
+            v-model="searchRow"
+            placeholder="Введите имя и фамилию"
+            class="textInput"
+          />
           <div
             class="search_list"
             :class="{ active: searchRow.length }"
@@ -114,6 +118,8 @@ export default {
   watch: {
     searchRow(newVal, oldVal) {
       if (!/^[А-я\s]*$/.test(newVal)) {
+        this.searchRow = oldVal
+      } else if (newVal == ' ') {
         this.searchRow = oldVal
       } else {
         this.startSearch()
