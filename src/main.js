@@ -1,3 +1,6 @@
+
+import '@/assets/css/styles.css';
+
 import Vue from 'vue'
 import App from './App.vue'
 
