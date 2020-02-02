@@ -206,14 +206,14 @@ export default {
     formresArray() {
       const self = this
 
-      self.searchResults = []
+      this.searchResults = []
     
-      if (self.surnames.length) {
-        self.surnames.forEach(function(itemSurname) {
+      if (this.surnames.length) {
+        this.surnames.forEach(function(itemSurname) {
           self.searchResults.push(self.capitalize(self.name) + " " + itemSurname)
         });
       } else {
-        self.names.forEach(function(itemName) {
+        this.names.forEach(function(itemName) {
           self.searchResults.push(itemName + " ...")
         });
       }
@@ -222,7 +222,7 @@ export default {
     getDataNamesFromAPI() {
       const self = this
 
-      self.names = []
+      this.names = []
 
       this.dataNamesFromDB().forEach(function(em) {
         if (em.Name.toLowerCase().indexOf(self.name.toLowerCase()) == 0) {
@@ -234,7 +234,7 @@ export default {
     getDataSureNamesFromAPI() {
       const self = this
       
-      self.surnames = []
+      this.surnames = []
   
       this.dataSurenamesFromDB().forEach(function(em) {
         if (em.Surname.toLowerCase().indexOf(self.surname.toLowerCase()) == 0) {
