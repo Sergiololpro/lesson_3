@@ -224,7 +224,7 @@ export default {
 
       self.names = []
 
-      Object.values(this.dataNamesFromDB()).forEach(function(em) {
+      this.dataNamesFromDB().forEach(function(em) {
         if (em.Name.toLowerCase().indexOf(self.name.toLowerCase()) == 0) {
           self.names.push(em.Name)
         }
@@ -236,7 +236,7 @@ export default {
       
       self.surnames = []
   
-      Object.values(this.dataSurenamesFromDB()).forEach(function(em) {
+      this.dataSurenamesFromDB().forEach(function(em) {
         if (em.Surname.toLowerCase().indexOf(self.surname.toLowerCase()) == 0) {
            self.surnames.push(em.Surname)
         }
