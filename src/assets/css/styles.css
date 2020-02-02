@@ -106,3 +106,13 @@ h3 {
     font-weight: 500;
     margin: 0 0 14px;
 }
+
+@keyframes load {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

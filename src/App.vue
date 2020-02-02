@@ -58,6 +58,10 @@
           </div>
         </div>
         <div class="search__content">
+          <div
+            v-if="!loading"
+            class="search__loading"
+          />
           <input
             v-model="searchRow"
             placeholder="Введите имя и фамилию"
@@ -335,4 +339,14 @@ export default {
   transition: opacity .3s ease-out
   &:hover
     opacity: .7
+
+.search__loading
+  width: 20px
+  height: 20px
+  background: url(assets/img/loading.svg) center no-repeat
+  background-size: contain
+  position: absolute
+  right: 14px
+  top: 10px
+  animation: load 1s infinite linear
 </style>
