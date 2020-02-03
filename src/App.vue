@@ -208,41 +208,35 @@ export default {
     },
 
     formresArray() {
-      const self = this
-
       this.searchResults = []
     
       if (this.surnames.length) {
-        this.surnames.forEach(function(itemSurname) {
-          self.searchResults.push(self.capitalize(self.name) + " " + itemSurname)
+        this.surnames.forEach((itemSurname) => {
+          this.searchResults.push(this.capitalize(this.name) + " " + itemSurname)
         });
       } else {
-        this.names.forEach(function(itemName) {
-          self.searchResults.push(itemName + " ...")
+        this.names.forEach((itemName) => {
+          this.searchResults.push(itemName + " ...")
         });
       }
     },
 
     getDataNamesFromAPI() {
-      const self = this
-
       this.names = []
 
-      this.dataNamesFromDB().forEach(function(em) {
-        if (em.Name.toLowerCase().indexOf(self.name.toLowerCase()) == 0) {
-          self.names.push(em.Name)
+      this.dataNamesFromDB().forEach((em) => {
+        if (em.Name.toLowerCase().indexOf(this.name.toLowerCase()) == 0) {
+          this.names.push(em.Name)
         }
       })
     },
 
     getDataSureNamesFromAPI() {
-      const self = this
-      
       this.surnames = []
   
-      this.dataSurenamesFromDB().forEach(function(em) {
-        if (em.Surname.toLowerCase().indexOf(self.surname.toLowerCase()) == 0) {
-           self.surnames.push(em.Surname)
+      this.dataSurenamesFromDB().forEach((em) => {
+        if (em.Surname.toLowerCase().indexOf(this.surname.toLowerCase()) == 0) {
+           this.surnames.push(em.Surname)
         }
       })
     },
